@@ -6,7 +6,7 @@ This project implements a deep learning pipeline to classify chest X-ray images 
 We use the PneumoniaMNIST dataset in .npz format with NumPy arrays for training, validation, and testing. To Obtain the .npz File go to the  [PneumoniaMNIST dataset](https://www.kaggle.com/datasets/rijulshr/pneumoniamnist/data) and place it in the root directory of this project.
 
 __Please compile in order :__
-1. __dataset.py__ - Custom dataset loader and preprocessing
+1. [dataset.py](dataset.py) - Custom dataset loader and preprocessing
 2. __model.py__ - Loads and modifies pretrained ResNet-50
 3. __utils.py__ - Utility functions for evaluation
 4. __train.py__ - Trains, fine-tunes the model and saves it
