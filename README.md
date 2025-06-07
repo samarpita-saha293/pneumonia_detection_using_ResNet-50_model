@@ -2,9 +2,6 @@
 
 This project implements a deep learning pipeline to classify chest X-ray images as either Normal or Pneumonia. The pipeline uses a fine-tuned ResNet-50 model on the [PneumoniaMNIST dataset](https://www.kaggle.com/datasets/rijulshr/pneumoniamnist/data) and is designed to work efficiently even on CPU setups.
 
-For running the codes
-
-
 ### Dataset
 1. __dataset.py__ - Custom dataset loader and preprocessing
 2. __model.py__ - Loads and modifies pretrained ResNet-50
