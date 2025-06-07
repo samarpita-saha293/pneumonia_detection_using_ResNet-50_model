@@ -1,8 +1,10 @@
-Make sure all the packages listed below are preinstalled or install these via pip:
+To run this project, ensure the following Python environment and packages are installed:
 
-torch>=1.12
-torchvision>=0.13
-numpy
-scikit-learn
-matplotlib
-seaborn
+Python version recommended: 3.8+
+
+1. torch>=1.12
+2. torchvision>=0.13
+3. numpy
+4. scikit-learn
+5. matplotlib
+6. seaborn
