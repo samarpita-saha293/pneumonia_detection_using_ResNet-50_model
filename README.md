@@ -15,6 +15,7 @@ We use the PneumoniaMNIST dataset in .npz format with NumPy arrays for training,
 
 ### Prerequisites
 Python version recommended: 3.8+
+
 To run this project, ensure the following Python environment and packages are installed:
 - Pytorch
 - numpy
