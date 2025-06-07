@@ -11,13 +11,15 @@ This project implements a deep learning pipeline to classify chest X-ray images 
 6. __pneumoniamnist.npz__ - Dataset file (to be downloaded separately)
 7. __saved_model__ - Stores the trained model checkpoint
 
+We use the PneumoniaMNIST dataset in .npz format with NumPy arrays for training, validation, and testing.
+
 ### Prerequisites
 Python version recommended: 3.8+
 - Pytorch
 - bcftools
 - 
 
-We use the PneumoniaMNIST dataset in .npz format with NumPy arrays for training, validation, and testing.
+
 
 Before working on the project you need to login to your project account using your DNAnexus account credentials
 ```
