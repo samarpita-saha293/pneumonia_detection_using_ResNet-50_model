@@ -10,12 +10,12 @@ Python version recommended: 3.8+
 - 
 
 ### Dataset
-├── dataset.py         # Custom dataset loader and preprocessing
-├── model.py           # Loads and modifies pretrained ResNet-50
-├── utils.py           # Utility functions for evaluation
-├── train.py           # Fine-tunes the model and saves it
-├── eval.py            # Loads the trained model and reports metrics
-├── pneumoniamnist.npz # Dataset file (to be downloaded separately)
+1. __dataset.py__ - Custom dataset loader and preprocessing
+2. __model.py__ - Loads and modifies pretrained ResNet-50
+3. __utils.py__ - Utility functions for evaluation
+4. __train.py__ - Fine-tunes the model and saves it
+5. __eval.py__ - Loads the trained model and reports metrics
+6. __pneumoniamnist.npz__ - Dataset file (to be downloaded separately)
 └── saved_model/       # Stores the trained model checkpoint
 
 We use the PneumoniaMNIST dataset in .npz format with NumPy arrays for training, validation, and testing.
