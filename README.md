@@ -26,7 +26,7 @@ Use dx login --timeout to control the expiration date, or dx logout to end this 
 
 ### Hyperparameter Choices
 
-| Parameter |	Value	| Rationale |
+| __Parameter__ |	__Value__	| __Rationale__ |
 |-----------|-------|-----------|
 | Learning Rate |	1e-4 | Suitable for fine-tuning ResNet |
 | Batch Size	| 8 |	Memory-efficient for CPU |
