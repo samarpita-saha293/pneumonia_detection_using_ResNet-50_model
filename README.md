@@ -16,8 +16,10 @@ We use the PneumoniaMNIST dataset in .npz format with NumPy arrays for training,
 ### Prerequisites
 Python version recommended: 3.8+
 - Pytorch
-- bcftools
-- 
+- numpy
+- scikit-learn
+- matplotlib
+- seaborn
 
 
 
