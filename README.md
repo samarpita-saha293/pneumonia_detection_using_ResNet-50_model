@@ -3,7 +3,7 @@
 This project implements a deep learning pipeline to classify chest X-ray images as either Normal or characterised by Pneumonia. The pipeline uses a fine-tuned ResNet-50 model on the [PneumoniaMNIST dataset](https://www.kaggle.com/datasets/rijulshr/pneumoniamnist/data) and is designed to work efficiently even on CPU setups.
 
 ### Tutorials and Reproducibility section
-We use the PneumoniaMNIST dataset in .npz format with NumPy arrays for training, validation, and testing. To Obtain the .npz File go to the MedMNIST GitHub Releases page. and place it in the root directory of this project.
+We use the PneumoniaMNIST dataset in .npz format with NumPy arrays for training, validation, and testing. To Obtain the .npz File go to the  [PneumoniaMNIST dataset](https://www.kaggle.com/datasets/rijulshr/pneumoniamnist/data) and place it in the root directory of this project.
 
 __Please compile in order :__
 1. __dataset.py__ - Custom dataset loader and preprocessing
@@ -116,6 +116,28 @@ for epoch in range(epochs):
 Model is saved to saved_model/ for future inference.
 ```
 torch.save(model.state_dict(), "saved_model/resnet50_cpu.pth")
+```
+
+We applied data augmentation to the training set to improve generalization and reduce overfitting. This included random flips, rotations, and resized crops to simulate variability in X-ray images. It was Implemented in dataset.py file.
+```
+train_transform = transforms.Compose([
+    transforms.ToPILImage(),
+    transforms.Resize((128, 128)),
+    transforms.RandomHorizontalFlip(),
+    transforms.RandomRotation(10),
+    transforms.RandomAffine(degrees=0, translate=(0.1, 0.1)),
+    transforms.ToTensor(),
+    to_3channel,
+    transforms.Normalize([0.5]*3, [0.5]*3)  # Normalize all 3 channels
+])
+
+test_transform = transforms.Compose([
+    transforms.ToPILImage(),
+    transforms.Resize((128, 128)),
+    transforms.ToTensor(),
+    to_3channel,
+    transforms.Normalize([0.5]*3, [0.5]*3)
+])
 ```
 
 ### STEP 5: Evaluation (eval.py)
