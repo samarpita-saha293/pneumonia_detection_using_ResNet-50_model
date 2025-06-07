@@ -25,7 +25,7 @@ The dataset includes:
 - train_images, train_labels
 - val_images, val_labels
 - test_images, test_labels
-- 
+  
 ### Hyperparameter Choices
 
 | __Parameter__ |	__Value__	| __Rationale__ |
