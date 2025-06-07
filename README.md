@@ -13,17 +13,19 @@ This project implements a deep learning pipeline to classify chest X-ray images 
 
 We use the PneumoniaMNIST dataset in .npz format with NumPy arrays for training, validation, and testing.
 
-## STEP 1: SAS sample extraction
+## STEP 1: Data Loading & Preprocessing (dataset.py)
 
-
-Before working on the project you need to login to your project account using your DNAnexus account credentials
 ```
-dx login
+data = np.load("pneumoniamnist.npz")
 ```
-Your credentials will be acquired from https://auth.dnanexus.com. While logging in you will be asked to choose from the list of available projects to work on.
+The code above is used to load train/val/test images and labels from a NumPy zipped file.
 
-Use dx login --timeout to control the expiration date, or dx logout to end this session.
+The dataset includes:
 
+- train_images, train_labels
+- val_images, val_labels
+- test_images, test_labels
+- 
 ### Hyperparameter Choices
 
 | __Parameter__ |	__Value__	| __Rationale__ |
@@ -34,3 +36,4 @@ Use dx login --timeout to control the expiration date, or dx logout to end this 
 | Optimizer |	Adam	| Adaptive and effective |
 | Loss Function |	CrossEntropy + class weights |	To handle class imbalance |
 | Image Size	| 128x128	| Reduces memory load while preserving structure |
+
