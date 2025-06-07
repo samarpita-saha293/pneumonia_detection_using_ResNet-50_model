@@ -16,7 +16,7 @@ Python version recommended: 3.8+
 4. __train.py__ - Fine-tunes the model and saves it
 5. __eval.py__ - Loads the trained model and reports metrics
 6. __pneumoniamnist.npz__ - Dataset file (to be downloaded separately)
-└── saved_model/       # Stores the trained model checkpoint
+7. __saved_model__ - Stores the trained model checkpoint
 
 We use the PneumoniaMNIST dataset in .npz format with NumPy arrays for training, validation, and testing.
 
