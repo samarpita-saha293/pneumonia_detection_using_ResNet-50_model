@@ -4,7 +4,7 @@ This project fine-tunes a pretrained ResNet-50 model to classify chest X-ray ima
 
 ### Directory Structure
 ### Prerequisites
-
+Python version recommended: 3.8+
 - Python 3.8 or higher
 - bcftools
 
