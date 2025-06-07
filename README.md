@@ -13,16 +13,6 @@ This project implements a deep learning pipeline to classify chest X-ray images 
 
 We use the PneumoniaMNIST dataset in .npz format with NumPy arrays for training, validation, and testing.
 
-### Prerequisites
-Python version recommended: 3.8+
-
-To run this project, ensure the following Python environment and packages are installed:
-- Pytorch
-- numpy
-- scikit-learn
-- matplotlib
-- seaborn
-
 ## STEP 1: SAS sample extraction
 
 
