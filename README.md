@@ -67,7 +67,27 @@ Modify Output Layer for Binary Classification (classes: Normal, Pneumonia)
 model.fc = nn.Linear(model.fc.in_features, 2)
 ``` 
 
-### STEP 3: Model Training (train.py)
+### STEP 3: Utility Functions (utils.py)
+
+The code snippet below returns a dictionary of metrics given prediction and ground truth arrays
+```
+def compute_metrics(y_true, y_pred):
+    return {
+        "accuracy": accuracy_score(y_true, y_pred),
+        "precision": precision_score(y_true, y_pred),
+        "recall": recall_score(y_true, y_pred),
+        "f1_score": f1_score(y_true, y_pred)
+    }
+```
+
+Encapsulate test logic for reusability in both training and evaluation
+```
+def evaluate_model(model, dataloader, device):
+    ...
+    return compute_metrics(all_labels, all_preds)
+```
+
+### STEP 4: Model Training (train.py)
 
 Compute weights to penalize the majority class less, and balance the loss
 ```
@@ -98,7 +118,7 @@ Model is saved to saved_model/ for future inference.
 torch.save(model.state_dict(), "saved_model/resnet50_cpu.pth")
 ```
 
-### STEP 4: Evaluation (eval.py)
+### STEP 5: Evaluation (eval.py)
 
 Load the trained model and test data.
 ```
@@ -114,7 +134,7 @@ with torch.no_grad():
         preds = torch.argmax(out, dim=1)
 ```
 
-Use scikit-learn to compute evaluation metrics
+Finally, use scikit-learn to compute evaluation metrics
 ```
 accuracy = accuracy_score(all_labels, all_preds)
 precision = precision_score(all_labels, all_preds)
@@ -129,26 +149,6 @@ Test Set Evaluation:
   Precision: 0.9123
   Recall   : 0.9501
   F1 Score : 0.9308
-  
-### STEP 5: Utility Functions (utils.py)
-
-The code snippet below returns a dictionary of metrics given prediction and ground truth arrays
-```
-def compute_metrics(y_true, y_pred):
-    return {
-        "accuracy": accuracy_score(y_true, y_pred),
-        "precision": precision_score(y_true, y_pred),
-        "recall": recall_score(y_true, y_pred),
-        "f1_score": f1_score(y_true, y_pred)
-    }
-```
-
-Finally, encapsulate test logic for reusability in both training and evaluation
-```
-def evaluate_model(model, dataloader, device):
-    ...
-    return compute_metrics(all_labels, all_preds)
-```
 
 ### Hyperparameter Choices
 
