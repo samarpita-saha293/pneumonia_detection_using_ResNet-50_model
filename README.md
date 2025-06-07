@@ -2,13 +2,23 @@
 
 This project implements a deep learning pipeline to classify chest X-ray images as either Normal or Pneumonia. The pipeline uses a fine-tuned ResNet-50 model on the [PneumoniaMNIST dataset](https://www.kaggle.com/datasets/rijulshr/pneumoniamnist/data) and is designed to work efficiently even on CPU setups.
 
-### Directory Structure
+For running the codes
 ### Prerequisites
 Python version recommended: 3.8+
-- Python 3.8 or higher
+- Pytorch
 - bcftools
+- 
 
-The DNAnexus dxpy Python library offers Python bindings for interacting with the DNAnexus Platform through its API. The dxpy package, part of the DNAnexus platform SDK, requires Python 3.8 or higher. We used python3.11.4 module and bcftools-1.18 on the Institute's HPC system.
+### Dataset
+├── dataset.py         # Custom dataset loader and preprocessing
+├── model.py           # Loads and modifies pretrained ResNet-50
+├── utils.py           # Utility functions for evaluation
+├── train.py           # Fine-tunes the model and saves it
+├── eval.py            # Loads the trained model and reports metrics
+├── pneumoniamnist.npz # Dataset file (to be downloaded separately)
+└── saved_model/       # Stores the trained model checkpoint
+
+We use the PneumoniaMNIST dataset in .npz format with NumPy arrays for training, validation, and testing.
 
 Before working on the project you need to login to your project account using your DNAnexus account credentials
 ```
