@@ -23,3 +23,14 @@ dx login
 Your credentials will be acquired from https://auth.dnanexus.com. While logging in you will be asked to choose from the list of available projects to work on.
 
 Use dx login --timeout to control the expiration date, or dx logout to end this session.
+
+### Hyperparameter Choices
+
+| Parameter |	Value	| Rationale |
+|-----------|-------|-----------|
+| Learning Rate |	1e-4 | Suitable for fine-tuning ResNet |
+| Batch Size	| 8 |	Memory-efficient for CPU |
+| Epochs	| 50	| Adequate for convergence |
+| Optimizer |	Adam	| Adaptive and effective |
+| Loss Function |	CrossEntropy + class weights |	To handle class imbalance |
+| Image Size	| 128x128	| Reduces memory load while preserving structure |
