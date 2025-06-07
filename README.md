@@ -1,4 +1,8 @@
 # Pneumonia_detection_using_ResNet-50_model
+
+This project fine-tunes a pretrained ResNet-50 model to classify chest X-ray images into two classes: Normal and Pneumonia. It leverages transfer learning to achieve high accuracy using a publicly available dataset.
+
+### Directory Structure
 ### Prerequisites
 
 - Python 3.8 or higher
