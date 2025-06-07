@@ -55,7 +55,7 @@ def get_dataloaders(batch_size=8):
     return train_loader, val_loader, test_loader
 ```
 
-### STEP 2: Model Setup (model.py)
+### STEP 2: Model Setup ([model.py](model.py))
 
 Load Pretrained ResNet-50 pretrained on ImageNet. This allows transfer learning on X-ray images.
 ```
@@ -67,7 +67,7 @@ Modify Output Layer for Binary Classification (classes: Normal, Pneumonia)
 model.fc = nn.Linear(model.fc.in_features, 2)
 ``` 
 
-### STEP 3: Utility Functions (utils.py)
+### STEP 3: Utility Functions ([utils.py](utils.py))
 
 The code snippet below returns a dictionary of metrics given prediction and ground truth arrays
 ```
@@ -87,7 +87,7 @@ def evaluate_model(model, dataloader, device):
     return compute_metrics(all_labels, all_preds)
 ```
 
-### STEP 4: Model Training (train.py)
+### STEP 4: Model Training ([train.py](train.py))
 
 Compute weights to penalize the majority class less, and balance the loss
 ```
@@ -140,7 +140,7 @@ test_transform = transforms.Compose([
 ])
 ```
 
-### STEP 5: Evaluation (eval.py)
+### STEP 5: Evaluation ([eval.py](eval.py))
 
 Load the trained model and test data.
 ```
