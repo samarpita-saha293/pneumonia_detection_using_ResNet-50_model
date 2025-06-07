@@ -9,14 +9,14 @@ __Please compile in order :__
 1. __dataset.py__ - Custom dataset loader and preprocessing
 2. __model.py__ - Loads and modifies pretrained ResNet-50
 3. __utils.py__ - Utility functions for evaluation
-4. __train.py__ - Fine-tunes the model and saves it
+4. __train.py__ - Trains, fine-tunes the model and saves it
 5. __eval.py__ - Loads the trained model and reports metrics
-6. __eval_met.py__ -
-7. __eval_miscl.py__ -
-8. __pr_curve.py__ -
-9. __eval_roc.py__ -  
+6. __eval_met.py__ - Prints out the model metrics
+7. __eval_miscl.py__ - Generates misclassified images
+8. __pr_curve.py__ - Generates the Precision-Recall curve (Highlights performance under class imbalance by focusing on positive class predictions)
+9. __eval_roc.py__ - Generates the ROC curve
 
-Lastly, __saved_model__ Stores the trained model checkpoint.
+Lastly, __saved_model__ stores the trained model checkpoint.
 
 ## Code Description
 
