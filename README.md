@@ -7,20 +7,20 @@ We use the PneumoniaMNIST dataset in .npz format with NumPy arrays for training,
 
 __Please compile in order :__
 1. [dataset.py](dataset.py) - Custom dataset loader and preprocessing
-2. __model.py__ - Loads and modifies pretrained ResNet-50
-3. __utils.py__ - Utility functions for evaluation
-4. __train.py__ - Trains, fine-tunes the model and saves it
-5. __eval.py__ - Loads the trained model and reports metrics
-6. __eval_met.py__ - Prints out the model metrics
-7. __eval_miscl.py__ - Generates misclassified images
-8. __pr_curve.py__ - Generates the Precision-Recall curve (Highlights performance under class imbalance by focusing on positive class predictions)
-9. __eval_roc.py__ - Generates the ROC curve
+2. [model.py](model.py) - Loads and modifies pretrained ResNet-50
+3. [utils.py](utils.py) - Utility functions for evaluation
+4. [train.py](train.py) - Trains, fine-tunes the model and saves it
+5. [eval.py](eval.py) - Loads the trained model and reports metrics
+6. [eval_met.py](eval_met.py) - Prints out the model metrics
+7. [eval_miscl.py](eval_miscl.py) - Generates misclassified images
+8. [pr_curve.py](pr_curve.py) - Generates the Precision-Recall curve (Highlights performance under class imbalance by focusing on positive class predictions)
+9. [eval_roc.py](eval_roc.py) - Generates the ROC curve
 
 Lastly, __saved_model__ stores the trained model checkpoint.
 
 ## Code Description
 
-### STEP 1: Data Loading & Preprocessing (dataset.py)
+### STEP 1: Data Loading & Preprocessing ([dataset.py](dataset.py))
 
 First, load train/val/test images and labels from a NumPy zipped file.
 
