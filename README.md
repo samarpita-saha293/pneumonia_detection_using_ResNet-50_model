@@ -48,6 +48,28 @@ class PneumoniaMNISTDataset(Dataset):
         ])
 ```
 
+We applied data augmentation to the training set to improve generalization and reduce overfitting. This included random flips, rotations, and resized crops to simulate variability in X-ray images. It was Implemented in dataset.py file.
+```
+train_transform = transforms.Compose([
+    transforms.ToPILImage(),
+    transforms.Resize((128, 128)),
+    transforms.RandomHorizontalFlip(),
+    transforms.RandomRotation(10),
+    transforms.RandomAffine(degrees=0, translate=(0.1, 0.1)),
+    transforms.ToTensor(),
+    to_3channel,
+    transforms.Normalize([0.5]*3, [0.5]*3)  # Normalize all 3 channels
+])
+
+test_transform = transforms.Compose([
+    transforms.ToPILImage(),
+    transforms.Resize((128, 128)),
+    transforms.ToTensor(),
+    to_3channel,
+    transforms.Normalize([0.5]*3, [0.5]*3)
+])
+```
+
 Wrapping datasets into PyTorch DataLoader objects for batched loading
 ```
 def get_dataloaders(batch_size=8):
@@ -116,28 +138,6 @@ for epoch in range(epochs):
 Model is saved to saved_model/ for future inference.
 ```
 torch.save(model.state_dict(), "saved_model/resnet50_cpu.pth")
-```
-
-We applied data augmentation to the training set to improve generalization and reduce overfitting. This included random flips, rotations, and resized crops to simulate variability in X-ray images. It was Implemented in dataset.py file.
-```
-train_transform = transforms.Compose([
-    transforms.ToPILImage(),
-    transforms.Resize((128, 128)),
-    transforms.RandomHorizontalFlip(),
-    transforms.RandomRotation(10),
-    transforms.RandomAffine(degrees=0, translate=(0.1, 0.1)),
-    transforms.ToTensor(),
-    to_3channel,
-    transforms.Normalize([0.5]*3, [0.5]*3)  # Normalize all 3 channels
-])
-
-test_transform = transforms.Compose([
-    transforms.ToPILImage(),
-    transforms.Resize((128, 128)),
-    transforms.ToTensor(),
-    to_3channel,
-    transforms.Normalize([0.5]*3, [0.5]*3)
-])
 ```
 
 ### STEP 5: Evaluation ([eval.py](eval.py))
