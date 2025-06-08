@@ -168,12 +168,7 @@ f1 = f1_score(all_labels, all_preds)
 ```
 
 ➤ Sample Output
-
-Test Set Evaluation:
-  Accuracy : 0.9345
-  Precision: 0.9123
-  Recall   : 0.9501
-  F1 Score : 0.9308
+![WhatsApp Image 2025-06-08 at 11 29 13_88e3a8be](https://github.com/user-attachments/assets/4b82c8e5-fd7d-4a47-a827-e32e8b8ef06a)
 
 ### Hyperparameter Choices
 
