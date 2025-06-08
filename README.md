@@ -134,6 +134,7 @@ for epoch in range(epochs):
     val_metrics = evaluate_model(model, val_loader, device)
     print(f"Epoch {epoch+1}/{epochs} - Val Acc: {val_metrics['accuracy']:.4f}, F1: {val_metrics['f1_score']:.4f}")
 ```
+![Screenshot (19)](https://github.com/user-attachments/assets/d9ee5573-53ed-4998-abcb-6f596874b065)
 
 Model is saved to saved_model/ for future inference.
 ```
@@ -148,7 +149,9 @@ model.load_state_dict(torch.load("saved_model/resnet50_cpu.pth", map_location=de
 _, _, test_loader = get_dataloaders(batch_size=8)
 ```
 
-Run the model in evaluation mode with gradient tracking turned off
+Run the model in evaluation mode with gradient tr![Screenshot (19)](https://github.com/user-attachments/assets/73c50913-ff7c-4519-b65b-2a0be4fab2ca)
+![Screenshot (19)](https://github.com/user-attachments/assets/ab0d28cb-3a2a-497c-8a77-9d852e6d032e)
+acking turned off
 ```
 with torch.no_grad():
     for x, y in test_loader:
